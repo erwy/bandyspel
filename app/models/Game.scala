@@ -39,7 +39,7 @@ object Game {
 
   def getForTeam(id: Long): List[Game] = DB.withConnection("psql") {
     implicit c =>
-      SQL("SELECT t1.name as a, t2.name as b,t1.id as hometeam_id, t2.id as awayteam_id, g.* FROM game g JOIN team t1 ON t1.id = g.hometeam_id JOIN team t2 ON t2.id = g.awayteam_id WHERE g.hometeam_id = {id} or g.awayteam_id = {id}").on("id"->id).as(game *)
+      SQL("SELECT t1.name as a, t2.name as b,t1.id as hometeam_id, t2.id as awayteam_id, g.* FROM game g JOIN team t1 ON t1.id = g.hometeam_id JOIN team t2 ON t2.id = g.awayteam_id WHERE g.hometeam_id = {id} or g.awayteam_id = {id} ORDER BY g.matchnumber").on("id"->id).as(game *)
   }
 
 
