@@ -3,7 +3,7 @@
 # --- !Ups
 
 CREATE TABLE GAME (
-  id BIGINT(20) NOT NULL AUTO_INCREMENT,
+  id SERIAL NOT NULL AUTO_INCREMENT,
   datetime DATETIME NOT NULL,
   matchnumber INTEGER NOT NULL,
   hometeam_id BIGINT(20) NOT NULL,
@@ -12,9 +12,9 @@ CREATE TABLE GAME (
   awaygoals INTEGER NOT NULL DEFAULT 0,
   PRIMARY KEY (id),
   FOREIGN KEY (hometeam_id)
-  REFERENCES Team(id),
+  REFERENCES TEAM(id),
   FOREIGN KEY (awayteam_id)
-  REFERENCES Team(id)
+  REFERENCES TEAM(id)
 );
 
 # --- !Downs

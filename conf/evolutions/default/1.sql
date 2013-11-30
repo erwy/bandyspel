@@ -2,12 +2,12 @@
 
 # --- !Ups
 
-CREATE TABLE Team (
-    id bigint(20) NOT NULL AUTO_INCREMENT,
+CREATE TABLE TEAM (
+    id serial NOT NULL,
     name varchar(255) NOT NULL,
     PRIMARY KEY (id)
 );
 
 # --- !Downs
 
-DROP TABLE Team;
+DROP TABLE TEAM;
