@@ -1,0 +1,20 @@
+@(teams: List[Team])
+
+@main("Lagen") {
+    <div class="container">
+        <h2>Lagen</h2>
+        <ul class="list-group">
+        @teams.map { team =>
+            <li class="list-group-item">
+                <a href='@routes.Team.info(team.id)'>
+                    <img class="test" data-src="holder.js/40x40" alt="Generic placeholder image">
+                    <strong> @team.name</strong>
+                </a>
+
+            </li>
+        }
+        </ul>
+    </div>
+
+
+}

@@ -1,0 +1,31 @@
+/*body{*/
+   /*background-color: #000000;*/
+/*}*/
+
+/*.list-group-item-mod{*/
+    /*background-color: #ada8a8;*/
+/*}*/
+
+
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+.test {
+    border-radius: 4px;
+}
+
+.mydiv {
+    display : inline;
+}
+
+.myrow{
+    padding: 10px 15px;
+}

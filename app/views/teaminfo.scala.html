@@ -1,0 +1,16 @@
+@(team: Team, games: List[Game])
+
+@main(team.name) {
+    <div class="container">
+        <h2>@team.name</h2>
+        <p><strong>Omklädningsrum: </strong> @team.id</p>
+        <h3>Matcher</h3>
+        <ul class="list-group">
+        @games.map { game =>
+            <li class="list-group-item">
+                @game.gamenum @game.date @game.hometeam - @game.awayteam @game.homegoals - @game.awaygoals
+            </li>
+        }
+        </ul>
+    </div>
+}

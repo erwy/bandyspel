@@ -1,0 +1,20 @@
+@(teams: List[Team])
+
+@import helper._
+
+@main("Todo list") {
+
+
+
+
+    <h1></h1>
+
+    <ul>
+    @teams.map { team =>
+        <li>
+           <a href='@routes.Team.games(team.id)'>@team.name</a>
+        </li>
+    }
+    </ul>
+
+}
