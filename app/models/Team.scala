@@ -15,11 +15,11 @@ object Team {
     }
   }
 
-  def all(): List[Team] =  DB.withConnection { implicit c =>
+  def all(): List[Team] =  DB.withConnection("psql") { implicit c =>
     SQL("select * from team").as(team *)
   }
 
-  def get(id: Long): Team = DB.withConnection { implicit c =>
+  def get(id: Long): Team = DB.withConnection("psql") { implicit c =>
     SQL("select * from team where id={id}").on("id"->id).as(team *).head
   }
 
