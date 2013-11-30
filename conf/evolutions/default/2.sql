@@ -4,7 +4,7 @@
 
 CREATE TABLE GAME (
   id SERIAL NOT NULL,
-  datetime DATETIME NOT NULL,
+  datetime timestamp NOT NULL,
   matchnumber INTEGER NOT NULL,
   hometeam_id BIGINT(20) NOT NULL,
   awayteam_id BIGINT(20) NOT NULL,
