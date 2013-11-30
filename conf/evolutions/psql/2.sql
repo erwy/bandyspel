@@ -1,5 +1,3 @@
-# Users schema
-
 # --- !Ups
 
 CREATE TABLE GAME (
