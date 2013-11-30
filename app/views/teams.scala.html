@@ -2,18 +2,25 @@
 
 @main("Lagen") {
     <div class="container">
-        <h2>Lagen</h2>
-        <ul class="list-group">
-        @teams.map { team =>
-            <li class="list-group-item">
-                <a href='@routes.Team.info(team.id)'>
-                    <img class="test" data-src="holder.js/40x40" alt="Generic placeholder image">
-                    <strong> @team.name</strong>
-                </a>
 
-            </li>
-        }
-        </ul>
+        <h2>Lagen</h2>
+        <div class="row">
+            <table class="table table-striped table-responsive">
+                <tbody>
+                @teams.map { team =>
+
+                        <tr>
+                            @*<td>@game.gamenum</td>*@
+
+                            <td> <a href='@routes.Team.info(team.id)'><strong> @team.name</strong></a></td>
+
+                        </tr>
+                }
+                </tbody>
+            </table>
+
+
+        </div>
     </div>
 
 

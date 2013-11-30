@@ -3,14 +3,29 @@
 @main(team.name) {
     <div class="container">
         <h2>@team.name</h2>
-        <p><strong>Omklädningsrum: </strong> @team.id</p>
+
         <h3>Matcher</h3>
-        <ul class="list-group">
-        @games.map { game =>
-            <li class="list-group-item">
-                @game.gamenum @game.date @game.hometeam - @game.awayteam @game.homegoals - @game.awaygoals
-            </li>
-        }
-        </ul>
+        <table class="table table-striped table-responsive">
+            <thead>
+                <tr>
+                    @*<th>Nr</th>*@
+                    <th>Tid</th>
+                    <th>Hemmalag</th>
+                    <th>Bortalag</th>
+                    <th>Resultat</th>
+                </tr>
+            </thead>
+            <tbody>
+            @games.map { game =>
+                <tr>
+                    @*<td>@game.gamenum</td>*@
+                    <td><small>@game.date.map(_.format("HH:mm")).getOrElse { <em>-</em> }</small></td>
+                    <td><small><a href='@routes.Team.info(game.hometeam_id)'>@game.hometeam</a></small></td>
+                    <td><small><a href='@routes.Team.info(game.awayteam_id)'>@game.awayteam</small></td>
+                    <td><small>@game.homegoals - @game.awaygoals</small></td>
+                </tr>
+            }
+            </tbody>
+        </table>
     </div>
 }
