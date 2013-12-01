@@ -8,15 +8,15 @@
 
 
 
-a {
-    color: #333;
-    text-decoration: none;
-}
+/*a {*/
+    /*color: #333;*/
+    /*text-decoration: none;*/
+/*}*/
 
-a:hover {
-    color: #333;
-    text-decoration: none;
-}
+/*a:hover {*/
+    /*color: #333;*/
+    /*text-decoration: none;*/
+/*}*/
 
 .test {
     border-radius: 4px;
@@ -29,4 +29,10 @@ a:hover {
 
 .myrow{
     padding: 10px 15px;
+}
+
+h2{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 25px;
 }
