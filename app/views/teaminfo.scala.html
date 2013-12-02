@@ -22,7 +22,11 @@
                     <td><small>@game.date.map(_.format("HH:mm")).getOrElse { <em>-</em> }</small></td>
                     <td><small><a href='@routes.Team.info(game.hometeam_id)'>@game.hometeam</a></small></td>
                     <td><small><a href='@routes.Team.info(game.awayteam_id)'>@game.awayteam</small></td>
-                    <td><small>@game.homegoals - @game.awaygoals</small></td>
+                    @if(game.played) {
+                        <td><small>@game.homegoals - @game.awaygoals</small></td>
+                    } else {
+                        <td><small>x - x</small></td>
+                    }
                 </tr>
             }
             </tbody>
